@@ -1,0 +1,42 @@
+{
+	"manifest_version": 3,
+	"name": "Dead Simple Site Blocker",
+	"version": "1.0.0",
+	"description": "Blocks websites.",
+	"author": "Kostiantyn Gominyuk",
+	"homepage_url": "https://github.com/kgominyuk/dead-simple-chrome-extensions",
+
+	"icons": {
+		"32": "src/icons/icon.png",
+		"48": "src/icons/icon.png",
+		"64": "src/icons/icon.png",
+		"96": "src/icons/icon.png",
+		"128": "src/icons/icon.png"
+	},
+
+	"action": {
+		"default_title": "Dead Simple Site Blocker",
+		"default_popup": "src/popup.html",
+		"default_icon": {
+			"32": "src/icons/icon.png",
+			"48": "src/icons/icon.png",
+			"64": "src/icons/icon.png",
+			"96": "src/icons/icon.png",
+			"128": "src/icons/icon.png"
+		}
+	},
+
+	"content_scripts": [
+		{
+			"js": [
+				"src/site-blocker.js"
+			],
+			"matches": ["<all_urls>"],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [
+		"tabs",
+		"storage"
+	]
+}
