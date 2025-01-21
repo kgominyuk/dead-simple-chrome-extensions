@@ -60,6 +60,6 @@ const siteBlocker = (() => {
 let url = new URL(document.URL)
 siteBlocker.isBlockedUrl(url).then(isBlocked => {
     if (isBlocked) {
-        document.body.innerHTML = "This site is blocked."
+        document.body.innerHTML = `<div style="background-color: #ffffff; color: #000000; padding: 10px;">This site is blocked.</div>`
     }
 })
